@@ -1,14 +1,65 @@
 @import 'utility';
 
-$base-text-size: 16px;
-$base-font-family: sans-serif;
+$base-text-size: 22px;
+$base-font-family: 'Dosis', sans-serif;
+$poa-purple: #fd5c63;
+$primary-text-color: #fff;
+$heading-font: 'Ubuntu', sans-serif;
 
 html {
   text-size-adjust: 100%;
+  background-color: $poa-purple;
 }
 
-body {
+div {
   @include font-smoothing(on);
+
   margin: 0;
-  font: $base-text-size / 1 $base-font-family;
+  // font: $base-text-size / 1 $base-font-family;
+  background-color: $poa-purple;
+  color: $primary-text-color;
+  // font: $heading-font;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+
+  header {
+    font: $base-text-size / 1 $heading-font;
+  }
+
+  ul {
+    font: $base-text-size / 1 $base-font-family;
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  input {
+    font-family: $base-font-family;
+    font-size: 22px;
+    text-align: center;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: none;
+    padding: 8px;
+
+    &:focus {
+      outline: none;
+      background-color: hsla(0, 0%, 100%, 0.25);
+      color: $primary-text-color;
+    }
+
+    &::placeholder {
+      color: $poa-purple;
+    }
+  }
 }
